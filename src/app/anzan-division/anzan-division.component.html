@@ -1,0 +1,34 @@
+<div>
+  <ul *ngIf="!runAnzan">
+    <h2>
+      <label>erste Zahl:
+        <input type="number" min=1 max=10  [(ngModel)]="ersteZahl"
+        style="width:1,5em;"  placeholder="erste Zahl">
+      </label>
+      <label>zweite Zahl:
+        <input type="number" min=1 max=10  [(ngModel)]="zweiteZahl"
+        style="width:1,5em;"  placeholder="zweite Zahl">
+      </label>
+      <label>mit Komma:
+        <input type="checkbox" [(ngModel)]="komma" placeholder="Minus">
+      </label>
+    </h2>
+  </ul>
+  <ul *ngIf="runAnzan">
+    <h4>
+        {{zahl1}} / {{zahl2}} <br>
+    </h4>
+    <button id = "#toplink" (click)="zeigeResult()">Ergebnis</button>
+  </ul>
+  <ul *ngIf="startAnzan">
+  <button (click)="startDivision()">start</button>
+  </ul>
+  <ul *ngIf="resultAnzan">
+    <h4>
+    {{division_result}}
+  </h4>
+  </ul>
+  <ul id="status">
+    Devision
+  </ul>
+</div>

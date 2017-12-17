@@ -1,0 +1,33 @@
+<div>
+  <ul *ngIf="!runAnzan">
+  <h2>
+    <label>erste Zahl:
+      <input type="number" min=1 max=10 [(ngModel)]="ersteZahl"
+      style="width:1,5em;"  placeholder="erste Zahl">
+    </label>
+    <label>zweite Zahl:
+      <input type="number" min=1 max=10 [(ngModel)]="zweiteZahl"
+      style="width:1,5em;"  placeholder="zweite Zahl">
+    </label>
+  </h2>
+  </ul>
+  <ul *ngIf="runAnzan">
+    <h4>
+        {{zahl1}} X {{zahl2}} <br>
+    </h4>
+  </ul>
+<ul *ngIf="startAnzan">
+<button (click)="startMultiplication()">start</button>
+</ul>
+<ul *ngIf="runAnzan">
+  <button (click)="zeigeResult()">Ergebnis</button>
+</ul>
+<ul *ngIf="resultAnzan">
+  <h4>
+  {{multiplication_result}}
+</h4>
+</ul>
+<ul id="status">
+  Multiplication
+</ul>
+</div>

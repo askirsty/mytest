@@ -1,0 +1,42 @@
+<div>
+  <ul *ngIf="startAnzan">
+  <h2>
+    <label>Ziffern:
+      <input type="number" min=1 max=9 [(ngModel)]="settings.anzahlZahlen"
+      style="width:1,5em;" placeholder="anzahlZahlen">
+    </label>
+    <label>Anzahl:
+      <input type="number" min=1 max=30 [(ngModel)]="settings.anzahl"
+      style="width:1,5em;"  placeholder="anzahl">
+    </label>
+    <label>Pause:
+      <input type="number" min=200 max=10000 [(ngModel)]="settings.pause" placeholder="pause">
+    </label>
+    <label>Minus:
+      <input type="checkbox" [(ngModel)]="settings.minus" placeholder="Minus">
+    </label>
+  </h2>
+  </ul>
+  <ul *ngIf="runAnzan">
+      <h4>
+        {{addition_subtruction}}
+      </h4>
+  </ul>
+  <ul *ngIf="startAnzan">
+    <button (click)="startAdditionSubstraction()">start</button>
+  </ul>
+  <ul *ngIf="resultAnzan">
+    <h4>
+    {{addition_subtruction_summe}}
+  </h4>
+  </ul>
+  <ul *ngIf="zeigeResults">
+    <button (click)="zeigeResult()">Ergebnis</button>
+  </ul>
+  <ul id="status">
+    Addition-Substraction
+  </ul>
+  <ul id="monitor">
+    {{monitorAufloesung}}
+  </ul>
+</div>
